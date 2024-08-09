@@ -14,3 +14,14 @@
     color: $success;
   }
 }
+
+
+.page-link
+{
+  color: $success;
+  border: solid 1px $success;
+}
+.page-link:focus,.page-link:hover{
+  color: $light;
+  background-color: $success;
+}

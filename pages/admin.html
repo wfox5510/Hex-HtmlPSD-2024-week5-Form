@@ -56,15 +56,151 @@
       </div>
     </div>
   </aside>
-  <main class="main d-flex flex-d justify-content-end">
-    <header class="d-flex align-items-center p-3 w-100">
-      <h2 class="d-blcok p-3 pe-5 h4 fw-bold">Admin</h2>
+  <main class="main d-flex flex-column justify-content-end p-3">
+    <header class="d-flex align-items-center w-100 p-3">
+      <h2 class="d-blcok pe-5 h4 fw-bold">Admin</h2>
       <button class="btn fw-bold p-0 me-auto"><span class="material-symbols-outlined align-bottom me-2 text-success">
-        add
-      </span>Add New Admin</button>
+          add
+        </span>Add New Admin</button>
       <button class="btn p-0 me-4"><span class="material-symbols-outlined align-bottom">search</span></button>
-      <button class="btn p-0 me-3"><span class="material-symbols-outlined align-bottom">notifications_active</span></button>
+      <button class="btn p-0"><span class="material-symbols-outlined align-bottom">notifications_active</span></button>
     </header>
+    <div class="px-2">
+      <table class="table align-middle">
+        <!-- 疑問，table的border-collapse屬性導致無法設定padding調整排版-->
+        <!-- 目前添加外層容器處理padding樣式，是否有更好的做法-->
+        <!-- border-collapse設定為何影響讓table無法進行padding設定 -->
+        <thead class="border-dark">
+          <!-- 預設應該為Dark，是否有設定影響到 -->
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">email</th>
+            <th scope="col">Verified</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">#1</th>
+            <td>Emir Wicks</td>
+            <td>emir.wicks@mail.com</td>
+            <td>Yes</td>
+            <td class="text-end py-3">
+              <button class="btn p-0 me-4 "><span class="material-symbols-outlined align-middle"> visibility</span></button>
+              <button class="btn p-0 "><span class="material-symbols-outlined  align-middle"> edit</span></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">#2</th>
+            <td>Zaina Goldsmith</td>
+            <td>zaina.goldsmith@mail.com</td>
+            <td>Yes</td>
+            <td class="text-end py-3">
+              <button class="btn p-0 me-4 "><span class="material-symbols-outlined align-middle"> visibility</span></button>
+              <button class="btn p-0 "><span class="material-symbols-outlined  align-middle"> edit</span></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">#3</th>
+            <td>Mahima Lopez</td>
+            <td>mahima.lopez@mail.com</td>
+            <td>Yes</td>
+            <td class="text-end py-3">
+              <button class="btn p-0 me-4 "><span class="material-symbols-outlined align-middle"> visibility</span></button>
+              <button class="btn p-0 "><span class="material-symbols-outlined  align-middle"> edit</span></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">#4</th>
+            <td>Pharrell Murray</td>
+            <td>pharrell.murray@mail.com</td>
+            <td>Yes</td>
+            <td class="text-end py-3">
+              <button class="btn p-0 me-4 "><span class="material-symbols-outlined align-middle"> visibility</span></button>
+              <button class="btn p-0 "><span class="material-symbols-outlined  align-middle"> edit</span></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">#5</th>
+            <td>Annika Mcbride</td>
+            <td>annika.mcbride@mail.com</td>
+            <td>Yes</td>
+            <td class="text-end py-3">
+              <button class="btn p-0 me-4 "><span class="material-symbols-outlined align-middle"> visibility</span></button>
+              <button class="btn p-0 "><span class="material-symbols-outlined  align-middle"> edit</span></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">#6</th>
+            <td>Fatimah Clark</td>
+            <td>fatimah.clark@mail.com</td>
+            <td>Yes</td>
+            <td class="text-end py-3">
+              <button class="btn p-0 me-4 "><span class="material-symbols-outlined align-middle"> visibility</span></button>
+              <button class="btn p-0 "><span class="material-symbols-outlined  align-middle"> edit</span></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">#7</th>
+            <td>Klaudia Rhodes</td>
+            <td>klaudia.rhodes@mail.com</td>
+            <td>Yes</td>
+            <td class="text-end py-3">
+              <button class="btn p-0 me-4 "><span class="material-symbols-outlined align-middle"> visibility</span></button>
+              <button class="btn p-0 "><span class="material-symbols-outlined  align-middle"> edit</span></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">#8</th>
+            <td>Tillie Lucero</td>
+            <td>tillie.lucero@mail.com</td>
+            <td>Yes</td>
+            <td class="text-end py-3">
+              <button class="btn p-0 me-4 "><span class="material-symbols-outlined align-middle"> visibility</span></button>
+              <button class="btn p-0 "><span class="material-symbols-outlined  align-middle"> edit</span></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">#9</th>
+            <td>Sabrina Stephenson</td>
+            <td>tillie.lucero@mail.com</td>
+            <td>Yes</td>
+            <td class="text-end py-3">
+              <button class="btn p-0 me-4 "><span class="material-symbols-outlined align-middle"> visibility</span></button>
+              <button class="btn p-0 "><span class="material-symbols-outlined  align-middle"> edit</span></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">#10</th>
+            <td>Annie Smith</td>
+            <td>annie.smith@mail.com</td>
+            <td>Yes</td>
+            <td class="text-end py-3">
+              <button class="btn p-0 me-4 "><span class="material-symbols-outlined align-middle"> visibility</span></button>
+              <button class="btn p-0 "><span class="material-symbols-outlined  align-middle"> edit</span></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation d-flex">
+        <ul class="pagination justify-content-end">
+          <li class="page-item">
+            <a class="page-link rounded-0" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link rounded-0" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </main>
   <script type="module" src="../main.js"></script>
 </body>
