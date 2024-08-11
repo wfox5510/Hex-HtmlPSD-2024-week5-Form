@@ -72,7 +72,8 @@
       <button type="button" class="btn p-0"><span
           class="material-symbols-outlined align-bottom">notifications_active</span></button>
       <!-- Modal -->
-      <div class="modal fade" id="NewAdminModal" tabindex="-1" aria-labelledby="NewAdminModalLabel" aria-hidden="true">
+      <div class="modal fade lh-modal" id="NewAdminModal" tabindex="-1" aria-labelledby="NewAdminModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
           <div class="modal-content p-3">
             <div class="modal-header border-0">
@@ -80,13 +81,13 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body py-0">
-              <form action="./admin.html" method="get">
+              <form action="./admin.html" method="get" id="NewAdminForm">
                 <fieldset class="pt-3 pb-4 border-bottom">
                   <legend class="fw-bold fs-5 mb-3">Account</legend>
                   <label for="add-admin-name"><small>Name</small></label>
-                  <input type="text" id="add-admin-name" class="w-100 p-2 fs-5 mb-3">
+                  <input type="text" id="add-admin-name" class="w-100 p-3 mb-3">
                   <label for="add-admin-Email"><small>Email</small></label>
-                  <input type="text" id="add-admin-Email" class="w-100 p-2 fs-5">
+                  <input type="text" id="add-admin-Email" class="w-100 p-3">
                 </fieldset>
                 <fieldset class="py-4 border-bottom">
                   <legend class="fw-bold fs-5 mb-3">Verification</legend>
@@ -97,7 +98,7 @@
                 </fieldset>
                 <fieldset class="py-4 border-bottom">
                   <legend><label for="AccessLevel" class="fw-bold fs-5 mb-3">Access Level</label></legend>
-                  <select name="AccessLevel" id="AccessLevel" class="w-100 rounded-0 p-3"
+                  <select name="AccessLevel" id="add-admin-AccessLevel" class="w-100 rounded-0 p-3"
                     placeholder="-Choose access level-">
                     <option value="" hidden selected disabled>-Choose access level-</option>
                     <option value="admin">admin</option>
@@ -106,32 +107,33 @@
                 <fieldset class="py-4 d-flex flex-column gap-3">
                   <legend class="fw-bold fs-5">Custom Access</legend>
                   <div class="form-check">
-                    <input class="form-check-input border-dark border-2" type="checkbox" name="access" value="Lecture" id="Lecture">
-                    <label class="form-check-label" for="Lecture">
+                    <input class="form-check-input border-dark border-2" type="checkbox" name="access" value="Lecture"
+                      id="add-admin-Lecture">
+                    <label class="form-check-label" for="add-admin-Lecture">
                       Lecture
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input border-dark border-2" type="checkbox" value="Coupon" id="Coupon">
-                    <label class="form-check-label" for="Coupon">
+                    <input class="form-check-input border-dark border-2" type="checkbox" value="Coupon" id="add-admin-Coupon">
+                    <label class="form-check-label" for="add-admin-Coupon">
                       Coupon
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input border-dark border-2" type="checkbox" value="Message" id="Message">
-                    <label class="form-check-label" for="Message">
+                    <input class="form-check-input border-dark border-2" type="checkbox" value="Message" id="add-admin-Message">
+                    <label class="form-check-label" for="add-admin-Message">
                       Message
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input border-dark border-2" type="checkbox" value="Setting" id="Setting">
-                    <label class="form-check-label" for="Setting">
+                    <input class="form-check-input border-dark border-2" type="checkbox" value="Setting" id="add-admin-Setting">
+                    <label class="form-check-label" for="add-admin-Setting">
                       Setting
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input border-dark border-2" type="checkbox" value="TaskMenu" id="TaskMenu">
-                    <label class="form-check-label" for="TaskMenu">
+                    <input class="form-check-input border-dark border-2" type="checkbox" value="TaskMenu" id="add-admin-TaskMenu">
+                    <label class="form-check-label" for="add-admin-TaskMenu">
                       Task Menu
                     </label>
                   </div>
@@ -139,8 +141,9 @@
               </form>
             </div>
             <div class="modal-footer border-0">
-              <button type="button" class="btn btn-outline-success rounded-1 py-2 px-3" data-bs-dismiss="modal"><span class="d-block px-3">Cancel</span></button>
-              <button type="button" class="btn btn-success rounded-1"><span class="d-block px-3">Add</span></button>
+              <button type="button" class="btn btn-outline-success rounded-1 py-2 px-3" data-bs-dismiss="modal"><span
+                  class="d-block px-3">Cancel</span></button>
+              <button type="submit" form="NewAdminForm" class="btn btn-success rounded-1"><span class="d-block px-3">Add</span></button>
             </div>
           </div>
         </div>
@@ -171,7 +174,8 @@
               <button type="button" class="btn p-0 me-4 " data-bs-toggle="modal" data-bs-target="#AdminInfoModal"><span
                   class="material-symbols-outlined align-middle">
                   visibility</span></button>
-              <button type="button" class="btn p-0 "><span class="material-symbols-outlined  align-middle">
+              <button type="button" class="btn p-0 " data-bs-toggle="modal" data-bs-target="#EditAdminModal"><span
+                  class="material-symbols-outlined  align-middle">
                   edit</span></button>
             </td>
           </tr>
@@ -302,7 +306,7 @@
           </li>
         </ul>
       </nav>
-      <!-- Modal -->
+      <!-- Modal AdminInfoModal-->
       <div class="modal fade" id="AdminInfoModal" tabindex="-1" aria-labelledby="AdminInfoModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -334,6 +338,95 @@
                 <button type="button" class="btn btn-success py-2 px-3 rounded-1"><span
                     class="px-3 fw-bold">Edit</span></button>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal EditAdminModal-->
+      <div class="modal fade lh-modal" id="EditAdminModal" tabindex="-1" aria-labelledby="EditAdminModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content p-3">
+            <div class="modal-header border-0">
+              <h4 class="modal-title fs-4 fw-bold" id="EditAdminModalLabel">Edit Admin</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-0">
+              <form action="./admin.html" method="get" id="EditAdminForm">
+                <fieldset class="pt-3 pb-4 border-bottom">
+                  <legend class="fw-bold fs-5 mb-3">Account</legend>
+                  <label for="edit-admin-name"><small>Name</small></label>
+                  <input type="text" id="edit-admin-name" class="w-100 p-3 mb-3 text-dark" value="Emir Wicks" disabled>
+                  <label for="edit-admin-Email"><small>Email</small></label>
+                  <input type="text" id="edit-admin-Email" class="w-100 p-3 text-dark" value="emir.wicks@mail.com"
+                    disabled>
+                </fieldset>
+                <fieldset class="py-4 border-bottom">
+                  <legend class="fw-bold fs-5 mb-3">Verification</legend>
+                  <span class="fw-bold mb-3 d-block"><span
+                      class="material-symbols-outlined align-middle text-success me-2">check_circle</span>Verified</span>
+                  <button type="button" class="btn py-3 rounded-0 w-100 border fw-bold text-muted" disabled>Send
+                    Verification
+                    Mail</button> <!--此button是否需要lable-->
+                </fieldset>
+                <fieldset class="py-4 border-bottom">
+                  <legend><label for="edit-admin-AccessLevel" class="fw-bold fs-5 mb-3">Access Level</label></legend>
+                  <select name="AccessLevel" id="edit-admin-AccessLevel" class="w-100 rounded-0 p-3"
+                    placeholder="-Choose access level-">
+                    <option value="" hidden selected disabled>-Choose access level-</option>
+                    <option value="admin">admin</option>
+                  </select>
+                </fieldset>
+                <fieldset class="py-4 d-flex flex-column gap-3">
+                  <legend class="fw-bold fs-5">Custom Access</legend>
+                  <div class="form-check">
+                    <input class="form-check-input border-dark border-2" type="checkbox" name="access" value="Lecture"
+                      id="edit-admin-Lecture">
+                    <label class="form-check-label" for="edit-admin-Lecture">
+                      Lecture
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input border-dark border-2" type="checkbox" value="Coupon" id="edit-admin-Coupon">
+                    <label class="form-check-label" for="edit-admin-Coupon">
+                      Coupon
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input border-dark border-2" type="checkbox" value="Message" id="edit-admin-Message">
+                    <label class="form-check-label" for="edit-admin-Message">
+                      Message
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input border-dark border-2" type="checkbox" value="Setting" id="edit-admin-Setting">
+                    <label class="form-check-label" for="edit-admin-Setting">
+                      Setting
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input border-dark border-2" type="checkbox" value="TaskMenu" id="edit-admin-TaskMenu">
+                    <label class="form-check-label" for="edit-admin-TaskMenu">
+                      Task Menu
+                    </label>
+                  </div>
+                </fieldset>
+                <fieldset class="py-4 d-flex flex-column gap-3">
+                  <legend class="fw-bold fs-5 m-0">Deactivate Account</legend>
+                  <span class="d-block text-danger"><span
+                      class="material-symbols-outlined align-middle me-2">warning</span>This cannot be
+                    undone!</span>
+                  <button type="button" class="btn py-3 rounded-0 w-100 fw-bold btn-outline-danger">
+                    Deactivate This Account Mail
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+            <div class="modal-footer border-0">
+              <button type="button" class="btn btn-outline-success rounded-1 py-2 px-3" data-bs-dismiss="modal"><span
+                  class="d-block px-3">Cancel</span></button>
+              <button type="submit" form="EditAdminForm" class="btn btn-success rounded-1"><span
+                  class="d-block px-3">Add</span></button>
             </div>
           </div>
         </div>
